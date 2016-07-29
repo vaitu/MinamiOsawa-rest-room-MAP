@@ -1,4 +1,8 @@
-var cesiumWidget = new Cesium.Viewer('cesiumContainer');
+var cesiumWidget = new Cesium.Viewer("cesiumContainer", {
+  baseLayerPicker : false,  //デフォルトのレイヤ切り替えウィジェットをオフにする
+  timeline : false,         //デフォルトのタイムラインウィジェットをオフにする
+  animation : false         //デフォルトのアニメーションウィジェットをオフにする
+});
 
 viewer.camera.setView({
   destination: Cesium.Cartesian3.fromDegrees(139.6721684, 35.7052493, 50000),

@@ -1,5 +1,5 @@
 var cesiumWidget = new Cesium.Viewer("cesiumContainer", {
-  baseLayerPicker : false,  //デフォルトのレイヤ切り替えウィジェットをオフにする
+  
   timeline : false,         //デフォルトのタイムラインウィジェットをオフにする
   animation : false         //デフォルトのアニメーションウィジェットをオフにする
 });

@@ -1,0 +1,1 @@
+# MinamiOsawa-rest-room-MAP

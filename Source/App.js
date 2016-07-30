@@ -1,7 +1,18 @@
-var cesiumWidget = new Cesium.Viewer("cesiumContainer", {
+var cesiumWidget = new Cesium.Viewer('cesiumContainer', {
   
   timeline : false,         //デフォルトのタイムラインウィジェットをオフにする
   animation : false         //デフォルトのアニメーションウィジェットをオフにする
+});
+
+var dataSources = new Cesium.DataSourceCollection();
+
+var dataSourceDisplay = new Cesium.DataSourceDisplay({
+    scene: cesiumWidget.scen,
+    dataSourceCollection: dataSources
+});
+
+cesiumWidget.scene.preRender.addEventListener(function(scene, time){
+    dataSourceDisplay.updata(time);
 });
 
 viewer.camera.setView({
@@ -13,7 +24,4 @@ viewer.camera.setView({
   }
 });
 
-viewer.dataSources.add(Cesium.KmlDataSource.load('Source/MinamiOsawa-restroom.kml'),{
-         camera: viewer.scene.camera,
-         canvas: viewer.scene.canvas
-});
+dataSources.add(Cesium.KmlDataSource.load('Source/MinamiOsawa-restroom.kml'));
